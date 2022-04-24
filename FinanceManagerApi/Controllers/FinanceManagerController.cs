@@ -4,24 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceManagerApi.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class FinanceManagerController : ControllerBase
     {
+        private static List<Transaction> transactionsList = new List<Transaction>();
         [HttpGet]
         public IActionResult getAllTransactions()
         {
-            List<Transaction> transactions = new List<Transaction>();
-            Transaction trans = new Transaction();
-            trans.amount = 10;
-            trans.description = "test";
-            transactions.Add(trans);
-            return Ok(transactions);
+            return Ok(transactionsList);
         }
-        /*[HttpPost]
-        public IActionResult saveTransaction()
+        [HttpPost]
+        public IActionResult saveTransaction([FromBody] Transaction transaction)
         {
-            return Ok(trans);
-        }*/
+            transactionsList.Add(transaction);
+            return Ok(transactionsList);
+        }
     }
 }
