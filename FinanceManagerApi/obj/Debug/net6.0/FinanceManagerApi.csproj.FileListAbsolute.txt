@@ -10,7 +10,6 @@ D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\Financ
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.csproj.AssemblyReference.cache
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.GeneratedMSBuildEditorConfig.editorconfig
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.AssemblyInfoInputs.cache
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.AssemblyInfo.cs
@@ -25,3 +24,4 @@ D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\Financ
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\ref\FinanceManagerApi.dll
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.pdb
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.genruntimeconfig.cache
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.csproj.AssemblyReference.cache

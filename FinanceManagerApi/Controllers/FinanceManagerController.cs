@@ -1,4 +1,5 @@
 ﻿using FinanceManagerApi.Models;
+using FinanceManagerApi.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,17 +10,34 @@ namespace FinanceManagerApi.Controllers
     [ApiController]
     public class FinanceManagerController : ControllerBase
     {
-        private static List<Transaction> transactionsList = new List<Transaction>();
+        
         [HttpGet]
-        public IActionResult getAllTransactions()
+        public IActionResult GetAllTransactions()
         {
-            return Ok(transactionsList);
+            TransactionService transactionService = new TransactionService();
+            return Ok(transactionService.getTransactionList());
         }
         [HttpPost]
-        public IActionResult saveTransaction([FromBody] Transaction transaction)
+        public IActionResult SaveTransaction([FromBody] Transaction transaction)
         {
-            transactionsList.Add(transaction);
-            return Ok(transactionsList);
+            TransactionService transactionService = new TransactionService();
+            transactionService.SetTransaction(transaction);
+            Console.WriteLine(transaction.ToString);
+            return Ok(transaction);
+        }
+        [HttpDelete]
+        [Route("{transactionId}")]
+        public IActionResult DeleteTransaction(int transactionId)
+        {
+            return Ok(transactionId);
+        }
+
+        [HttpPatch]
+        [Route("{transactionId}")]
+        public IActionResult UpdateTransaction([FromBody] Transaction transaction, int transactionId)
+        {
+            Console.WriteLine(transaction.ToString);
+            return Ok(transactionId);
         }
     }
 }
