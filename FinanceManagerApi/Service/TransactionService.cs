@@ -45,5 +45,34 @@ namespace FinanceManagerApi.Service
                 }
             }
         }
+
+        internal void UpdateTransaction(Transaction transaction, int transactionId)
+        {
+            int index = 0;
+            foreach (Transaction trans in transactionsList)
+            {
+                if (trans.Id == transactionId)
+                {
+                    trans.amount = transaction.amount;
+                    trans.transType = transaction.transType;
+                    trans.transactionDate = transaction.transactionDate;
+                    trans.description = transaction.description;
+                    transactionsList.Insert(index, trans);
+                }
+                index++;
+            }
+        }
+
+        internal Transaction FindByTransactionId(int transactionId)
+        {
+            foreach (Transaction transaction in transactionsList)
+            {
+                if (transaction.Id == transactionId)
+                {
+                    return transaction;
+                }
+            }
+            return null;
+        }
     }
 }
