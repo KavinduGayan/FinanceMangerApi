@@ -29,7 +29,14 @@ namespace FinanceManagerApi.Controllers
         [Route("{transactionId}")]
         public IActionResult DeleteTransaction(int transactionId)
         {
-            return Ok(transactionId);
+            TransactionService transactionService = new TransactionService();
+            Transaction transaction = transactionService.FindByTransactionId(transactionId);
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+            transactionService.DeleteTransactionById(transactionId);
+            return Ok();
         }
 
         [HttpPatch]
@@ -37,8 +44,13 @@ namespace FinanceManagerApi.Controllers
         public IActionResult UpdateTransaction([FromBody] Transaction transaction, int transactionId)
         {
             TransactionService transactionService = new TransactionService();
+            Transaction transactionToUpdate = transactionService.FindByTransactionId(transactionId);
+            if (transactionToUpdate == null)
+            {
+                return NotFound();
+            }
             transactionService.UpdateTransaction(transaction, transactionId);
-            return Ok(transactionId);
+            return Ok(transaction);
         }
         [HttpGet]
         [Route("{transactionId}")]

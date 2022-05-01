@@ -9,13 +9,6 @@ namespace FinanceManagerApi.Service
         private static List<Transaction> transactionsList = new List<Transaction>();//TODO
         public void SetTransaction(Transaction transaction)
         {
-            /*Transaction transaction = new Transaction();
-            transaction.amount = amount;
-            transaction.description = description;
-            transaction.transType = transType;
-            transaction.recurring = recurring;
-            transaction.insertedDate = DateTime.Now;
-            transaction.transactionDate = transDate;*/
             transId = transId + 1;
             transaction.Id = transId;
 
@@ -27,42 +20,28 @@ namespace FinanceManagerApi.Service
             return transactionsList;
         }
 
-        public void deleteTransactionById(int id)
+        public void DeleteTransactionById(int id)
         {
-            if (transactionsList.Count > id)
+
+            try
             {
-                try
-                {
-                    transactionsList.RemoveAt(id);
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    //log.Error("Error");
-                }
-                catch (IndexOutOfRangeException ex)
-                {
-                   
-                }
+                transactionsList.Remove(FindByTransactionId(id));
             }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+            }
+
         }
 
         internal void UpdateTransaction(Transaction transaction, int transactionId)
         {
-            Boolean isAvailable = false;
-           
-            foreach (Transaction trans in transactionsList)
-            {
-                if (trans.Id == transactionId)
-                {
-                    isAvailable = true;
-                }
-            }
-            if (isAvailable)
-            {
-                transactionsList.RemoveAt((int)transactionId);
-                transaction.Id = transactionId;
-                transactionsList.Add(transaction);
-            }
+            DeleteTransactionById(transactionId);
+            transactionsList.Add(transaction);
         }
 
         internal Transaction FindByTransactionId(int transactionId)
