@@ -5,7 +5,17 @@
       "ProjectGuid": "cdb07e6f-cf02-4bfb-aa54-0d1492afe238",
       "DisplayName": "FinanceManagerApi",
       "ColorIndex": 0
+    },
+    "9270118f-85b9-4691-b153-6e0a5f156fb0": {
+      "ProjectGuid": "9270118f-85b9-4691-b153-6e0a5f156fb0",
+      "DisplayName": "FinancialManager",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

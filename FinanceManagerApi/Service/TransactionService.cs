@@ -48,18 +48,20 @@ namespace FinanceManagerApi.Service
 
         internal void UpdateTransaction(Transaction transaction, int transactionId)
         {
-            int index = 0;
+            Boolean isAvailable = false;
+           
             foreach (Transaction trans in transactionsList)
             {
                 if (trans.Id == transactionId)
                 {
-                    trans.amount = transaction.amount;
-                    trans.transType = transaction.transType;
-                    trans.transactionDate = transaction.transactionDate;
-                    trans.description = transaction.description;
-                    transactionsList.Insert(index, trans);
+                    isAvailable = true;
                 }
-                index++;
+            }
+            if (isAvailable)
+            {
+                transactionsList.RemoveAt((int)transactionId);
+                transaction.Id = transactionId;
+                transactionsList.Add(transaction);
             }
         }
 
