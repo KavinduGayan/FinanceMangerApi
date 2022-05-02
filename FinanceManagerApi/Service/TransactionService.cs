@@ -15,7 +15,7 @@ namespace FinanceManagerApi.Service
             transactionsList.Add(transaction);
         }
 
-        public List<Transaction> getTransactionList()
+        public List<Transaction> GetTransactionList()
         {
             return transactionsList;
         }

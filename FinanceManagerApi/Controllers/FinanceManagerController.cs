@@ -15,7 +15,7 @@ namespace FinanceManagerApi.Controllers
         public IActionResult GetAllTransactions()
         {
             TransactionService transactionService = new TransactionService();
-            return Ok(transactionService.getTransactionList());
+            return Ok(transactionService.GetTransactionList());
         }
         [HttpPost]
         public IActionResult SaveTransaction([FromBody] Transaction transaction)
@@ -59,6 +59,22 @@ namespace FinanceManagerApi.Controllers
             TransactionService transactionService = new TransactionService();
             Transaction transaction = transactionService.FindByTransactionId(transactionId);
             return Ok(transaction);
+        }
+
+        [HttpGet]
+        [Route("reports/weekly")]
+        public IActionResult GetWeeklyReport()
+        {
+            ReportService reportService = new ReportService();
+            return Ok(reportService.GetWeeklyReport());
+        }
+
+        [HttpGet]
+        [Route("reports/prediction")]
+        public IActionResult GetPredictionReport()
+        {
+            ReportService reportService = new ReportService();
+            return Ok(reportService.GetPredictionReport());
         }
     }
 }
