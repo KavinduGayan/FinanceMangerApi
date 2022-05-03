@@ -25,3 +25,9 @@ D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\Financ
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.pdb
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.genruntimeconfig.cache
 D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\obj\Debug\net6.0\FinanceManagerApi.csproj.AssemblyReference.cache
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\iit\sem-2\enterprise application development\project\FinanceManagerApi\FinanceManagerApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

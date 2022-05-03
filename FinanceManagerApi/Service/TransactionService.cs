@@ -1,13 +1,13 @@
 ﻿using FinanceManagerApi.Models;
+using FinanceManagerApi.repository;
+using System.Data.SqlClient;
 
 namespace FinanceManagerApi.Service
 {
 
     public class TransactionService
     {
-        private static int transId = 0;
-        private static List<Transaction> transactionsList = new List<Transaction>();//TODO
-        public void SetTransaction(Transaction transaction)
+         public void SetTransaction(Transaction transaction)
         {
             Thread thread = new Thread(() => AddTrans(transaction));
             thread.Start();
@@ -15,16 +15,15 @@ namespace FinanceManagerApi.Service
         }
         private void AddTrans(Transaction transaction)
         {
-            transId = transId + 1;
-            transaction.Id = transId;
-
-            transactionsList.Add(transaction);
+            TransactionRepository transactionRepository = new TransactionRepository();
+            transactionRepository.InsertTransaction(transaction);
         }
 
 
         public List<Transaction> GetTransactionList()
         {
-            return transactionsList;
+            TransactionRepository transactionRepository = new TransactionRepository();
+            return transactionRepository.GetAllTransactions();
         }
 
         public void DeleteTransactionById(int id)
@@ -38,7 +37,8 @@ namespace FinanceManagerApi.Service
         {
             try
             {
-                transactionsList.Remove(FindByTransactionId(id));
+                TransactionRepository transactionRepository = new TransactionRepository();
+                transactionRepository.DeleteTransaction(id);
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -52,14 +52,14 @@ namespace FinanceManagerApi.Service
 
         internal void UpdateTransaction(Transaction transaction, int transactionId)
         {
-            Thread thread = Thread.CurrentThread;
-            thread.Start();
-            DeleteTransactionById(transactionId);
-            transactionsList.Add(transaction);
+            TransactionRepository transactionRepository = new TransactionRepository();
+            transactionRepository.UpdateTransaction(transaction);
         }
 
         internal Transaction FindByTransactionId(int transactionId)
         {
+            TransactionRepository transactionRepository = new TransactionRepository();
+            List<Transaction> transactionsList = transactionRepository.GetAllTransactions();
             foreach (Transaction transaction in transactionsList)
             {
                 if (transaction.Id == transactionId)

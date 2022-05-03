@@ -5,6 +5,7 @@ namespace FinanceManagerApi.Service
 {
     public class ReportService
     {
+        //user $Password
         public List<WeeklyReport> GetWeeklyReport()
         {
             TransactionService transactionService = new TransactionService();
